@@ -16,7 +16,7 @@ export default function RootLayout({children}: {
 }) {
     return (
         <html lang="en">
-        <body className="bg-gray-1100 overflow-y-scroll bg-[url('/grid.svg')] pb-36">
+        <body className={`${inter} antialiased bg-gray-1100 overflow-y-scroll bg-[url('/grid.svg')] pb-36`}>
         <GlobalNav/>
 
         <div className="lg:pl-72">

@@ -1,6 +1,6 @@
-import {Item} from '@/lib/menu';
 import Link from "next/link";
 import Image from "next/image";
+import {Item} from "@/lib/definitions";
 
 export default function TileCard({item, href}: { item: Item, href: string }) {
 

@@ -1,11 +1,12 @@
 'use client';
 
-import {menu, type Category} from '@/lib/menu';
+import {menu} from '@/lib/menu';
 import Link from 'next/link';
 import {useSelectedLayoutSegment} from 'next/navigation';
 import {MenuAlt2Icon, XIcon} from '@heroicons/react/solid';
 import clsx from 'clsx';
 import {useState} from 'react';
+import {Category} from "@/lib/definitions";
 
 export function GlobalNav() {
     const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +60,7 @@ export function GlobalNav() {
                                     {/*{category.items.map((item) => (*/}
                                     {/*    <GlobalNavItem key={item.slug} item={item} close={close}/>*/}
                                     {/*))}*/}
-                                    <GlobalNavItem key={category.slug} item={category} close={close} />
+                                    <GlobalNavItem key={category.slug} item={category} close={close}/>
                                 </div>
                             </div>
                         );
@@ -70,10 +71,7 @@ export function GlobalNav() {
     );
 }
 
-function GlobalNavItem({
-                           item,
-                           close,
-                       }: {
+function GlobalNavItem({item, close}: {
     item: Category;
     close: () => false | void;
 }) {
