@@ -1,7 +1,7 @@
 import {menu} from "@/lib/menu";
 import TileCard from "@/ui/tile-card";
 
-export default function Page({params}: { params: { slug: string } }) {
+export default async function Page({params}: { params: { slug: string } }) {
 
     const category = menu.find(category => category.slug === params.slug)
     const items = category?.items ?? [];
@@ -17,6 +17,5 @@ export default function Page({params}: { params: { slug: string } }) {
                 }
             </div>
         </div>
-
     );
 }
