@@ -1,19 +1,36 @@
+"use client";
+
 import {menu} from "@/lib/menu";
 import {Item} from "@/lib/definitions";
 import Image from "next/image";
+import {useEffect, useState} from "react";
+import {ItemDetailSkeleton} from "@/ui/skeletons";
+import {notFound} from "next/navigation";
 
 export default function Page({params}: { params: { slug: string } }) {
-    const findItem = (): Item | undefined => {
+
+    const [loading, setLoading] = useState(true);
+    const findItem = (): Item => {
         for (const category of menu) {
             const item = category.items.find(item => item.slug === params.slug);
             if (item) {
                 return item;
             }
         }
-        return undefined;
+        notFound();
     }
 
-    const item = findItem() ?? {name: "", slug: "", description: "", calorie: 0};
+    const item = findItem();
+
+    useEffect(() => {
+        if (item) {
+            setLoading(false);
+        }
+    }, [item]);
+
+    if (loading) {
+        return <ItemDetailSkeleton/>
+    }
 
     return (
         <div className="space-y-5 prose prose-sm prose-invert max-w-none">
@@ -31,7 +48,6 @@ export default function Page({params}: { params: { slug: string } }) {
             <div>
                 {item.description}
             </div>
-
         </div>
     )
 }

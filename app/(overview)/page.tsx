@@ -12,7 +12,7 @@ export default function Page() {
                             <h2 className="prose prose-sm prose-invert">
                                 {name}
                             </h2>
-                            <div className="grid grid-cols-2 gap-5 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-7">
+                            <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                                 {
                                     items.map((item) => (
                                         <TileCard key={item.name} item={item} href={`/items/${item.slug}`}/>

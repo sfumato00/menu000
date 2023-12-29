@@ -8,12 +8,9 @@ export default function TileCard({item, href}: { item: Item, href: string }) {
         <div>
             <Link
                 href={href}
-                // className="group block space-y-1.5 rounded-lg bg-gray-900 px-5 py-3 hover:bg-gray-800"
+                className="group block space-y-1.5 rounded-lg bg-gray-900 px-2 py-1 hover:bg-gray-800"
             >
-                {/*<div className="font-medium text-gray-200 group-hover:text-gray-50">*/}
-                {/*    {item.name}*/}
-                {/*</div>*/}
-                <div className="space-y-2">
+                <div className="space-y-2 flex justify-center">
                     <Image
                         src={`/${item.slug}.jpg`}
                         className="sm:block rounded-lg lg:block"
@@ -22,13 +19,12 @@ export default function TileCard({item, href}: { item: Item, href: string }) {
                         width={150}
                     />
                 </div>
-
-                {/*{item.description ? (*/}
-                {/*    <div*/}
-                {/*        className="line-clamp-3 text-sm text-gray-400 group-hover:text-gray-300">*/}
-                {/*        {item.description}*/}
-                {/*    </div>*/}
-                {/*) : null}*/}
+                <div>
+                    {item.name}
+                </div>
+                <div>
+                    Cal. {item.calorie}
+                </div>
             </Link>
         </div>
     );
