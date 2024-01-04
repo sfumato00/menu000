@@ -14,11 +14,11 @@ const Label = ({
         <div
             className={clsx('rounded-full px-1.5 shadow-[0_0_1px_3px_black]', {
                 'bg-gray-800 text-gray-300': color === 'default',
-                'bg-mcd-pink text-white': color === 'pink',
-                'bg-mcd-blue text-white': color === 'blue',
-                'bg-mcd-cyan text-white': color === 'cyan',
-                'bg-mcd-violet text-violet-100': color === 'violet',
-                'bg-mcd-orange text-white': color === 'orange',
+                'bg-burger-pink text-white': color === 'pink',
+                'bg-burger-blue text-white': color === 'blue',
+                'bg-burger-cyan text-white': color === 'cyan',
+                'bg-burger-violet text-violet-100': color === 'violet',
+                'bg-burger-orange text-white': color === 'orange',
                 'animate-[highlight_1s_ease-in-out_1]': animateRerendering,
             })}
         >
@@ -45,12 +45,12 @@ export const Boundary = ({
                 'p-3 lg:p-5': size === 'small',
                 'p-4 lg:p-9': size === 'default',
                 'border-gray-700': color === 'default',
-                'border-mcd-pink': color === 'pink',
-                'border-mcd-blue': color === 'blue',
-                'border-mcd-cyan': color === 'cyan',
-                'border-mcd-violet': color === 'violet',
-                'border-mcd-orange': color === 'orange',
-                'text-mcd-pink animate-[rerender_1s_ease-in-out_1]':
+                'border-burger-pink': color === 'pink',
+                'border-burger-blue': color === 'blue',
+                'border-burger-cyan': color === 'cyan',
+                'border-burger-violet': color === 'violet',
+                'border-burger-orange': color === 'orange',
+                'text-burger-pink animate-[rerender_1s_ease-in-out_1]':
                 animateRerendering,
             })}
         >
